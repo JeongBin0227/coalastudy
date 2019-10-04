@@ -1,0 +1,6 @@
+과제2
+https://series.naver.com/ebook/home.nhn
+
+컨테이너: div.lst_thum_wrap li
+제목: div.lst_thum_wrap li a strong
+저자: div.lst_thum_wrap li span.writer
