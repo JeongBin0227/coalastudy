@@ -1,0 +1,13 @@
+print("일반계산기 프로그램입니다!")
+first_num = input("계산할 첫번째 값을 입력해주세요 : ")
+second_num = input("계산할 두번째 값을 입력해주세요 : ")
+
+print(first_num,"와",second_num)
+first_num = int(first_num)
+second_num = int(second_num)
+print("더하기 값 (a+b) : ",first_num+second_num)
+print("빼기 값 (a-b) : ",first_num-second_num)
+print("곱하기 값 (a*b) : ",first_num*second_num)
+print("정수 나누기 값 (a//b) : ",int(first_num/second_num))
+print("실수 나누기 값 (a/b) : ",first_num/second_num)
+print("나머지 값 (a%b) : ",first_num%second_num)
