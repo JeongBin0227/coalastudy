@@ -15,7 +15,22 @@ html = BeautifulSoup(raw.text, 'html.parser')
 
 #1. 컨테이너 수집
 
-container = html.select("div.inner")
+# container = html.select("div.inner")
+# print(container[0])
+#
+# #2. 영상데이터 수집
+# for cont in container:
+#     title = cont.select_one("dt.title")
+#     chn = cont.select_one("dd.chn")
+#     hit = cont.select_one("span.hit")
+#     like = cont.select_one("span.like")
+#     print(title.text.strip())
+#     print(chn.text.strip())
+#     print(hit.text.strip())
+#     print(like.text.strip())
+
+
+container = html.select("div.cds")
 print(container[0])
 
 #2. 영상데이터 수집
@@ -28,5 +43,3 @@ for cont in container:
     print(chn.text.strip())
     print(hit.text.strip())
     print(like.text.strip())
-
-
