@@ -2,24 +2,19 @@ import requests
 from bs4 import BeautifulSoup
 
 count = 0
-for page in range(1,10,1):
-    print(page)
-    raw = requests.get("https://news.ycombinator.com/news?p="+str(page),headers={"User-Agent":"Mozilla/5.0"})
+for n in range(1, 4):
+    # p=1, p=2, p=3으로 반복해준다.
+    raw = requests.get("https://news.ycombinator.com/news?p="+str(n),
+                       headers={"User-Agent":"Mozilla/5.0"})
     html = BeautifulSoup(raw.text, 'html.parser')
 
-    # 컨테이너 : ul.type01 > li
-    # 기사제목 : a._sp_each_title
-    # 언론사 : span._sp_each_source
+    articles = html.select("tr.athing")
 
-    #1. 컨테이너 수집
-    articles = html.select("ul.type01 > li")
-
-    #2. 기사데이터 수집
     for ar in articles:
-        title = ar.select_one("a._sp_each_title").text
-        source =ar.select_one("span._sp_each_source").text
-        print(title, source)
-        count = count +1;
+        rank = ar.select_one("span.rank").text
+        title = ar.select_one("a.storylink").text
+        print(rank, title)
+        count = count +1
 
 print(count)
 
